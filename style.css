@@ -1,0 +1,290 @@
+*,html,body{
+    margin: 0;
+    padding: 0;
+    font-family: Poppins,Arial, Helvetica, sans-serif;
+}
+
+body{
+    transition: background-color 0.5s, color 0.5s;
+}
+
+@font-face{
+    font-family: Poppins;
+    src: url(Font/Poppins-Bold.ttf) format(truetype);
+}
+
+.nightMode{
+    background-color: black;
+    color: #ffffff;
+}
+
+.loading{
+    width: 10vw;
+    margin: 3rem auto;
+    text-align: center;
+    cursor: progress;
+}
+
+p::selection{
+    background: rgba(0, 0, 0,0.5);
+}
+
+.load{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 15px solid gray;
+    border-top: 15px solid #0099ff;
+    animation: loading 4s linear infinite;
+}
+
+main{
+    display: none;
+    animation: opacity 1.5s ease-in-out;
+}
+
+button{
+    width: 120px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: #0099ff;
+    color: #ffffff;
+    margin-left: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:active{
+    transform: scale(0.8);
+    transition: .3s linear;
+}
+
+.ball-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.ball{
+    position: absolute;
+    top: -10px;
+    color: #0099ff;
+    font-size: 1em;
+    will-change: transform;
+    pointer-events: none;
+    animation: ball linear infinite;
+}
+
+.intro{
+    margin: 3rem auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40vw;
+    height: 50vh;
+}
+
+.profile{
+    background-color: #0099ff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+    margin: 20px;
+}
+
+.profile::after{
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 40px;
+    background-color: #0099ff;
+    top: 22px;
+    left: -10px;
+    border-radius: 50% 50% 0% 0%;
+}
+
+.intro span{
+    color: gray;
+    cursor: default;
+}
+
+.intro h2{
+    color: #0099ff;
+    cursor: default;
+}
+
+.biodata{
+    width: 40vw;
+    margin: 10rem auto;
+    
+}
+
+.decorate{
+    width: 170px;
+    height: 170px;
+    border: 16px solid rgba(0, 153, 255, 0.5);
+    border-radius: 50%;
+    z-index: -1;
+    position: relative;
+    top: 210px;
+    left: 360px;
+}
+
+.biodata h2{
+    color: #0099ff;
+    text-align: center;
+    margin-bottom: 1rem;
+    cursor: default;
+}
+
+.biodata p{
+    font-size: 1.2em;
+    cursor: default;
+    background: none;
+}
+
+.deskripsi{
+    width: 40vw;
+    margin: 10rem auto;
+}
+
+.decorate-2{
+    width: 170px;
+    height: 170px;
+    border: 16px solid rgba(0, 153, 255, 0.5);
+    border-radius: 50%;
+    z-index: -1;
+    position: relative;
+    top: 240px;
+    left: 150px;
+}
+
+.deskripsi h2{
+    text-align: center;
+    color: #0099ff;
+    margin-bottom: 1rem;
+    cursor: default;
+}
+
+.deskripsi p{
+    font-size: 1.2em;
+    cursor: default;
+}
+
+.skills{
+    width: 40vw;
+    margin: 10rem auto;
+}
+
+.skills h2{
+    text-align: center;
+    color: #0099ff;
+    margin-bottom: 1rem;
+    cursor: default;
+}
+
+.image{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.penutup{
+    width: 40vw;
+    margin: 10rem auto;
+    text-align: center;
+}
+
+.penutup h2 span{
+    color: gray;
+    cursor: default;
+}
+
+.penutup h2{
+    color: #0099ff;
+    cursor: default;
+}
+
+/* animasi */
+
+@keyframes loading{
+    to{
+        transform: rotate(0deg);
+    }
+    from{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes ball{
+    to{
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes opacity{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+/* animasi end */
+
+/* media query */
+
+@media only screen and (min-width:992px){
+    .atas,.bawah{
+        width: 98vw;
+    }
+}
+
+@media only screen and (min-width:375px) and (max-width:992px){
+    .profile{
+        display: none;
+    }
+    .decorate{
+        top: 300px;
+        left: -30px;
+    }
+    .decorate-2{
+        top: 280px;
+        left: -30px;
+    }
+}
+
+@media only screen and (max-width:700px){
+    /* html{
+        overflow-x: hidden;
+    } */
+    .image img{
+        width: 70px;
+    }
+    .biodata p{
+        font-size: 1em;
+    }
+    .deskripsi p{
+        font-size: 1em;
+    }
+    .skills{
+        width: 60vw;
+    }
+    .image{
+        width: 60vw;
+    }
+    
+}
+
+/* media query end */
