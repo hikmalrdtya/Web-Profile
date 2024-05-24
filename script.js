@@ -49,7 +49,7 @@ $(window).scroll(function(){
         });
     
         $('.intro').css({
-            'transform' : `translate(0px,${wScroll/9}%)`
+            'transform' : `translate(0px,${wScroll/10}%)`
         });
         return
     }
